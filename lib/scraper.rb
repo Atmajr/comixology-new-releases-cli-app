@@ -31,8 +31,6 @@ class Scraper
 
     page = Nokogiri::HTML(open(issue_url))
 
-    new_issue = Issue.new
-
     issue_title = page.css('#column2 .title').text #.to_sym
     issue_description = page.css('.item-description').text
     issue_price = page.css('.item-price').text
@@ -40,8 +38,11 @@ class Scraper
     issue_artist = page.css("h2[title='Art by']").text
     issue_publisher = page.css("h2[title='Published by']").text
 
+    new_issue = Issue.new(issue_title, issue_description, issue_price, issue_author, issue_artist, issue_publisher)
+
     binding.pry
 
+    new_issue
 
   end
 

@@ -11,6 +11,7 @@ class Issue
     @author = author
     @artist = artist
     @publisher = publisher
+    @@all << self
   end
 
   def  self.all
