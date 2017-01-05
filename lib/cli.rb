@@ -5,6 +5,25 @@ class CommandLineInterface
   def run
     make_issues
     add_attributes_to_issues
+    puts "Welcome to the Comixology New Release Extractor"
+    puts "Please enter a number:"
+    command = "0"
+    while (command != "4") do
+      puts "1.) List new releases"
+      puts "2.) Get more info about a release"
+      puts "3.) Display basic some basic help"
+      puts "4.) Exit this program"
+      command = gets.chomp!
+      case command
+        when "1"
+        when "2"
+        when "3"
+        when "4"
+          puts "Thank you for using the Comixology New Release Extractor!"
+        else
+          puts "Invalid command. Please try again."
+      end
+    end
   end
 
   def make_issues
