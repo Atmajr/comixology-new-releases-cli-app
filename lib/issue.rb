@@ -18,4 +18,10 @@ class Issue
     @@all
   end
 
+  def self.create_from_collection
+  end
+
+  def add_issue_attributes
+  end
+
 end

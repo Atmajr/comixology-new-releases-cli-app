@@ -27,19 +27,21 @@ class Scraper
   def self.scrape_issue_page(issue_url)
 
     page = Nokogiri::HTML(open(issue_url))
+    issue_hash = Hash.new
+    #issue_symbol = page.css("#column2 .title[itemprop='name']").text.to_sym
+    #issue_title = page.css("#column2 .title[itemprop='name']").text
+    #issue_price = page.css('.item-price').text
+    issue_hash[:description] = page.css('.item-description').text
+    issue_hash[:author] = page.css("h2[title='Written by']").text.delete("\n").delete("\t").split.join(" ") #remove newlines, tabs and double spaces
+    issue_hash[:artist] = page.css("h2[title='Art by']").text.delete("\n").delete("\t").split.join(" ")
+    issue_hash[:publisher] = page.css("h3[title='Publisher']").text.delete("\n").delete("\t").split.join(" ")
 
-    issue_title = page.css("#column2 .title[itemprop='name']").text
-    issue_price = page.css('.item-price').text
-    issue_description = page.css('.item-description').text
-    issue_author = page.css("h2[title='Written by']").text.delete("\n").delete("\t").split.join(" ") #remove newlines, tabs and double spaces
-    issue_artist = page.css("h2[title='Art by']").text.delete("\n").delete("\t").split.join(" ")
-    issue_publisher = page.css("h3[title='Publisher']").text.delete("\n").delete("\t").split.join(" ")
-
-    new_issue = Issue.new(issue_title, issue_price, issue_description, issue_author, issue_artist, issue_publisher)
+    #new_issue = Issue.new(issue_title, issue_price, issue_description, issue_author, issue_artist, issue_publisher)
 
     #binding.pry
 
-    new_issue
+    #new_issue
+    issue_hash
 
   end
 

@@ -2,12 +2,11 @@ require_relative '../config/environment.rb'
 
 class CommandLineInterface
 
-  BASE_URL = "https://www.comixology.com/new-comics"
-
   def run
   end
 
   def make_issues
+    issues_array = Scraper.scrape_release_page
   end
 
   def display_issues
