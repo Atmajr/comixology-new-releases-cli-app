@@ -1,4 +1,4 @@
-require_relative '../lib/scraper.rb'
+require_relative '../config/environment.rb'
 
 issues = Scraper.scrape_release_page
 
