@@ -31,7 +31,13 @@ class Scraper
 
     page = Nokogiri::HTML(open(issue_url))
     issue_hash = Hash.new #use hash temporarily - build out to Issue object later
-    issue_symbol = page.css('#column2 .title').text #.to_sym
+    issue_title = page.css('#column2 .title').text #.to_sym
+    issue_description = page.css('.item-description').text
+    issue_price = page.css('.item-price').text
+    issue_author = page.css("h2[title='Written by']").text
+    issue_artist = page.css("h2[title='Art by']").text
+    issue_publisher = page.css("h2[title='Published by']").text
+
     binding.pry
 
 
