@@ -4,7 +4,7 @@ class CommandLineInterface
 
   def run
     make_issues
-    add_attributes_to_issues
+    #add_attributes_to_issues
     puts "Welcome to the Comixology New Release Extractor"
     puts "Please enter a number:"
     command = "0"
@@ -29,7 +29,7 @@ class CommandLineInterface
 
   def make_issues
     issues_array = Scraper.scrape_release_page
-    add_attributes_to_issues
+    Issue.create_from_collection(issues_array)
   end
 
   def display_issues
@@ -48,6 +48,7 @@ class CommandLineInterface
       count = Issue.all.index(issue) + 1
       puts "#{count}.) #{issue.title} - #{issue.price}"
     end
+    puts "------"
   end
 
 end

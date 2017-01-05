@@ -1,6 +1,6 @@
 class Issue
 
-  attr_reader :title, :price, :description, :author, :artist, :publisher
+  attr_accessor :title, :price, :url, :description, :author, :artist, :publisher
 
   @@all = []
 
@@ -33,7 +33,7 @@ class Issue
 
   def add_issue_attributes(attributes_hash)
     attributes_hash.each do |key, value|
-      self.send("{key=}", value)
+      #self.send("#{key=}", value)
     end
   end
 
