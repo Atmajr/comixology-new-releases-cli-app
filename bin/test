@@ -1,3 +1,10 @@
 require_relative '../lib/scraper.rb'
 
-Scraper.scrape_release_page
+issues = Scraper.scrape_release_page
+
+issues.each do |issue|
+  puts "Title: #{issue[:title]}"
+  puts "Price: #{issue[:price]}"
+  puts "Url: #{issue[:url]}"
+  puts "---------------------"
+end
