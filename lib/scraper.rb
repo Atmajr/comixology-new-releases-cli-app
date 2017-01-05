@@ -13,6 +13,9 @@ class Scraper
     #binding.pry
 
     page.css('.content-item').each do |item|
+      price = item.css('.item-actions-container').attr('data-price').text
+      url = item.css('.content-details').attr('href').text
+      title = item.css('.content-details').attr('title').text
       binding.pry
     end
 
