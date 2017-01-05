@@ -1,0 +1,3 @@
+require_relative '../lib/scraper.rb'
+
+Scraper.scrape_release_page
