@@ -34,13 +34,13 @@ class Scraper
     issue_title = page.css("#column2 .title[itemprop='name']").text
     issue_price = page.css('.item-price').text
     issue_description = page.css('.item-description').text
-    issue_author = page.css("h2[title='Written by']").text
-    issue_artist = page.css("h2[title='Art by']").text
-    issue_publisher = page.css("h3[title='Publisher']").text
+    issue_author = page.css("h2[title='Written by']").text.delete("\n").delete("\t").split.join(" ") #remove newlines, tabs and double spaces
+    issue_artist = page.css("h2[title='Art by']").text.delete("\n").delete("\t").split.join(" ")
+    issue_publisher = page.css("h3[title='Publisher']").text.delete("\n").delete("\t").split.join(" ")
 
     new_issue = Issue.new(issue_title, issue_price, issue_description, issue_author, issue_artist, issue_publisher)
 
-    binding.pry
+    #binding.pry
 
     new_issue
 
