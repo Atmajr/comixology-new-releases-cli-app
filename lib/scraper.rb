@@ -28,6 +28,13 @@ class Scraper
   end
 
   def self.scrape_issue_page(issue_url)
+
+    page = Nokogiri::HTML(open(issue_url))
+    issue_hash = Hash.new #use hash temporarily - build out to Issue object later
+    issue_symbol = page.css('#column2 .title').text #.to_sym
+    binding.pry
+
+
   end
 
 end
