@@ -30,7 +30,9 @@ class Scraper
   def self.scrape_issue_page(issue_url)
 
     page = Nokogiri::HTML(open(issue_url))
-    issue_hash = Hash.new #use hash temporarily - build out to Issue object later
+
+    new_issue = Issue.new
+
     issue_title = page.css('#column2 .title').text #.to_sym
     issue_description = page.css('.item-description').text
     issue_price = page.css('.item-price').text
