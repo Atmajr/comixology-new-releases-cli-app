@@ -16,6 +16,7 @@ class CommandLineInterface
       command = gets.chomp!
       case command
         when "1"
+          list_issues
         when "2"
         when "3"
         when "4"
@@ -38,6 +39,14 @@ class CommandLineInterface
     Issue.all.each do |issue|
       attributes = Scraper.scrape_issue_page(issue.url)
       issue.add_issue_attributes(attributes)
+    end
+  end
+
+  def list_issues
+    binding.pry
+    Issue.all.each do |issue|
+      count = Issue.all.index(issue) + 1
+      puts "#{count}.) #{issue.title} - #{issue.price}"
     end
   end
 
