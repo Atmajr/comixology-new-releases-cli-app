@@ -9,13 +9,4 @@ require_relative '../config/environment.rb'
 #  puts "---------------------"
 #end
 
-#Scraper.scrape_issue_page('https://www.comixology.com/A-A-The-Adventures-of-Archer-Armstrong-11/digital-comic/446843')
-
-issue = Scraper.scrape_issue_page('https://www.comixology.com/A-Little-Anxious/digital-comic/441857')
-
-puts issue.title
-puts issue.description
-puts issue.price
-puts issue.author
-puts issue.artist
-puts issue.publisher
+# Scraper.scrape_issue_page('https://www.comixology.com/A-A-The-Adventures-of-Archer-Armstrong-11/digital-comic/446843')
