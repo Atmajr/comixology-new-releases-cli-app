@@ -3,7 +3,7 @@
 - [X] Git repo
 - [ ] Blog Post
 - [ ] Readme
-- [X] Screen cast
+- [X] Screen cast - /justin/Videos/flatiron-school-cli-data-gem-project-screencast.flv
 - [ ] Tutorial video
 - [ ] Check off spec.md and write explanation of how each requirement has been met
 

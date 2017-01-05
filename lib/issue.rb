@@ -2,7 +2,19 @@ class Issue
 
   attr_reader :title, :price, :description, :author, :artist, :publisher
 
-  def initialize
+  @@all = []
+
+  def initialize(title, price, description, author, artist, publisher)
+    @title = title
+    @price = price
+    @description = description
+    @author = author
+    @artist = artist
+    @publisher = publisher
+  end
+
+  def  self.all
+    @@all
   end
 
 end
