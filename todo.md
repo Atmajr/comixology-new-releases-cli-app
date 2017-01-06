@@ -7,7 +7,7 @@
 - [ ] Tutorial video
 - [ ] Check off spec.md and write explanation of how each requirement has been met
 
-#Coding ToDos
+# Wishlist
 
 - [ ] scrape release date and group issues under it
 - [ ] refactor output to be more human readable - paginate?
