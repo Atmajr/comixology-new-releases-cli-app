@@ -4,7 +4,7 @@ class CommandLineInterface
 
   def run
     make_issues
-    #add_attributes_to_issues
+    add_attributes_to_issues
     puts "Welcome to the Comixology New Release Extractor"
     puts "Please enter a number:"
     command = "0"
@@ -43,7 +43,7 @@ class CommandLineInterface
   end
 
   def list_issues
-    binding.pry
+    #binding.pry
     Issue.all.each do |issue|
       count = Issue.all.index(issue) + 1
       puts "#{count}.) #{issue.title} - #{issue.price}"

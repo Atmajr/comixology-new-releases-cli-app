@@ -33,7 +33,7 @@ class Issue
 
   def add_issue_attributes(attributes_hash)
     attributes_hash.each do |key, value|
-      #self.send("#{key=}", value)
+      self.send("#{key}=", value)
     end
   end
 

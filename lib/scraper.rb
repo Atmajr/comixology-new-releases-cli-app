@@ -25,8 +25,9 @@ class Scraper
   end
 
   def self.scrape_issue_page(issue_url)
-
-    page = Nokogiri::HTML(open(issue_url))
+    issue_uri = Addressable::URI.parse(issue_url)
+    parse_path = "https://www.comixology.com/" + issue_uri.normalized_path
+    page = Nokogiri::HTML(open(parse_path))
     issue_hash = Hash.new
     #issue_symbol = page.css("#column2 .title[itemprop='name']").text.to_sym
     #issue_title = page.css("#column2 .title[itemprop='name']").text
@@ -39,7 +40,7 @@ class Scraper
     #binding.pry
     #new_issue
     issue_hash
-    
+
   end
 
 end
