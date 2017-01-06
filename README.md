@@ -21,5 +21,15 @@ Option 2 will allow the user to explore more in-depth information for a particul
 Option 3 will exit the program
 
 ### ToDo
+
 + Better output formatting or pagination
 + Ability to display issues by release date
++ Ability to extract from other new release pages - e.g. https://www.comixology.com/new-comics?RecentList0_pg=2&cu=0
+
+### Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/Atmajr/comixology-new-releases-cli-app
+
+### License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
