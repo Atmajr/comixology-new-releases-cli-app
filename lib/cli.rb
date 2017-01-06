@@ -43,16 +43,18 @@ class CommandLineInterface
           attributes_hash = Scraper.scrape_issue_page(chosen_issue.url)
           chosen_issue.add_issue_attributes(attributes_hash)
         end
-        binding.pry
+        #binding.pry
+        puts "------"
         puts "Title: #{chosen_issue.title}"
         puts "Price: #{chosen_issue.price}"
         puts "Description: #{chosen_issue.description}"
         puts "Author: #{chosen_issue.author}"
         puts "Artist: #{chosen_issue.artist}"
         puts "Publisher: #{chosen_issue.publisher}"
+        puts "------"
         input_is_valid = true
       else
-        "Invalid input. Try again."
+        puts "Invalid input. Try again."
       end
     end
   end

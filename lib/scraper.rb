@@ -33,9 +33,13 @@ class Scraper
     #issue_title = page.css("#column2 .title[itemprop='name']").text
     #issue_price = page.css('.item-price').text
     issue_hash[:description] = page.css('.item-description').text
-    issue_hash[:author] = page.css("h2[title='Written by']").text.delete("\n").delete("\t").split.join(" ") #remove newlines, tabs and double spaces
-    issue_hash[:artist] = page.css("h2[title='Art by']").text.delete("\n").delete("\t").split.join(" ")
-    issue_hash[:publisher] = page.css("h3[title='Publisher']").text.delete("\n").delete("\t").split.join(" ")
+    #issue_hash[:author] = page.css("h2[title='Written by']").text.delete("\n").delete("\t").split.join(" ") #remove newlines, tabs and double spaces
+    #issue_hash[:artist] = page.css("h2[title='Art by']").text.delete("\n").delete("\t").split.join(" ")
+    #issue_hash[:publisher] = page.css("h3[title='Publisher']").text.delete("\n").delete("\t").split.join(" ")
+    issue_hash[:author] = page.css("h2[title='Written by']").text.gsub("\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n", ", ").gsub("\t", "").gsub("\n", "").split.join(" ")
+    issue_hash[:artist] = page.css("h2[title='Art by']").text.gsub("\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n", ", ").gsub("\t", "").gsub("\n", "").split.join(" ")
+    issue_hash[:publisher] = page.css("h3[title='Publisher']").text.gsub("\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n", ", ").gsub("\t", "").gsub("\n", "").split.join(" ")
+    #binding.pry
     #new_issue = Issue.new(issue_title, issue_price, issue_description, issue_author, issue_artist, issue_publisher)
     #binding.pry
     #new_issue
